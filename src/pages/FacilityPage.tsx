@@ -1,5 +1,6 @@
 import React from 'react';
 import { GYM_INFO, IMAGES } from '../data/gymData';
+import { SafeImage } from '../components/SafeImage';
 import { CheckCircle2 } from 'lucide-react';
 
 interface FacilitySectionProps {
@@ -26,37 +27,43 @@ export const FacilitySection: React.FC<FacilitySectionProps> = ({ onScrollTo }) 
       {/* 2. Photo-Led Facility Grid */}
       <div className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="relative rounded-2xl overflow-hidden aspect-4/3 group shadow-md border border-slate-200">
-            <img
+          <div
+            className="relative rounded-2xl overflow-hidden aspect-[4/3] min-h-[340px] sm:min-h-[420px] group shadow-md border border-slate-200 bg-slate-900"
+            style={{ aspectRatio: '4/3', minHeight: '340px' }}
+          >
+            <SafeImage
               src={IMAGES.hero}
+              fallbacks={IMAGES.fallbacks.hero}
               alt="Main barbell floor with warm morning sunlight"
-              referrerPolicy="no-referrer"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent flex flex-col justify-end p-6 text-white">
-              <span className="text-xs uppercase font-mono tracking-wider text-slate-300 font-semibold">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent pointer-events-none flex flex-col justify-end p-6 text-white">
+              <span className="text-xs uppercase font-mono tracking-wider text-emerald-400 font-semibold">
                 Olympic Lifting Zone
               </span>
               <h3 className="font-editorial text-2xl font-bold mt-1">Calibrated Steel & Precision Platforms</h3>
-              <p className="text-xs text-slate-200 mt-1">
+              <p className="text-xs text-slate-200 mt-1 max-w-md">
                 Hardwood insert platforms, high-tensile barbells, calibrated steel and rubber bumper plates up to 450kg capacity per station.
               </p>
             </div>
           </div>
 
-          <div className="relative rounded-2xl overflow-hidden aspect-4/3 group shadow-md border border-slate-200">
-            <img
+          <div
+            className="relative rounded-2xl overflow-hidden aspect-[4/3] min-h-[340px] sm:min-h-[420px] group shadow-md border border-slate-200 bg-slate-900"
+            style={{ aspectRatio: '4/3', minHeight: '340px' }}
+          >
+            <SafeImage
               src={IMAGES.lateNight}
+              fallbacks={IMAGES.fallbacks.lateNight}
               alt="Serene late-night training floor at midnight"
-              referrerPolicy="no-referrer"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent flex flex-col justify-end p-6 text-white">
-              <span className="text-xs uppercase font-mono tracking-wider text-slate-300 font-semibold">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent pointer-events-none flex flex-col justify-end p-6 text-white">
+              <span className="text-xs uppercase font-mono tracking-wider text-emerald-400 font-semibold">
                 24-Hour Access Reality
               </span>
               <h3 className="font-editorial text-2xl font-bold mt-1">Undisturbed Midnight Atmosphere</h3>
-              <p className="text-xs text-slate-200 mt-1">
+              <p className="text-xs text-slate-200 mt-1 max-w-md">
                 Peaceful, warm ambient illumination and zero wait times. Train at 1:00 AM or 4:00 AM with complete peace of mind.
               </p>
             </div>

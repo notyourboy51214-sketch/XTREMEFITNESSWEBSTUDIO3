@@ -1,5 +1,6 @@
 import React from 'react';
 import { PROGRAMS, GYM_INFO, IMAGES } from '../data/gymData';
+import { SafeImage } from '../components/SafeImage';
 import { CheckCircle2, ArrowRight, MessageSquare } from 'lucide-react';
 
 interface ProgramsSectionProps {
@@ -51,12 +52,17 @@ export const ProgramsSection: React.FC<ProgramsSectionProps> = ({ onScrollTo, on
             </div>
           </div>
           <div className="lg:col-span-5">
-            <img
-              src={IMAGES.crossfit}
-              alt="CrossFit training on turf track"
-              referrerPolicy="no-referrer"
-              className="rounded-2xl w-full aspect-4/3 object-cover shadow-md border border-slate-700"
-            />
+            <div
+              className="rounded-2xl overflow-hidden shadow-md border border-slate-700 aspect-[4/3] min-h-[280px] bg-slate-900"
+              style={{ aspectRatio: '4/3', minHeight: '280px' }}
+            >
+              <SafeImage
+                src={IMAGES.crossfit}
+                fallbacks={IMAGES.fallbacks.crossfit}
+                alt="CrossFit training on turf track"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { RAMADAN_BOOTCAMP, GYM_INFO, IMAGES } from '../data/gymData';
+import { SafeImage } from '../components/SafeImage';
 import { CheckCircle2, Clock, Moon, MessageSquare } from 'lucide-react';
 
 interface SeasonalSectionProps {
@@ -34,15 +35,15 @@ export const SeasonalSection: React.FC<SeasonalSectionProps> = ({ onScrollTo, on
       {/* 2. Photo Spotlight on Ramadan Camp */}
       <div className="relative rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-sm">
         <div className="grid grid-cols-1 lg:grid-cols-12">
-          <div className="lg:col-span-6 relative min-h-[320px] lg:min-h-[460px]">
-            <img
+          <div className="lg:col-span-6 relative min-h-[320px] lg:min-h-[460px] bg-slate-900 overflow-hidden">
+            <SafeImage
               src={IMAGES.bootcamp}
+              fallbacks={IMAGES.fallbacks.bootcamp}
               alt="Athletes training during Ramadan twilight session"
-              referrerPolicy="no-referrer"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6 text-white lg:hidden">
-              <span className="text-xs uppercase font-mono font-semibold text-slate-300">Ramadan 2026 Cohort</span>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent pointer-events-none flex flex-col justify-end p-6 text-white lg:hidden">
+              <span className="text-xs uppercase font-mono font-semibold text-emerald-400">Ramadan 2026 Cohort</span>
               <h3 className="font-editorial text-xl font-bold">Synchronized with Lahore's Fasting Hours</h3>
             </div>
           </div>

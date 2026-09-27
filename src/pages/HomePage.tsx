@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { GYM_INFO, IMAGES } from '../data/gymData';
+import { SafeImage } from '../components/SafeImage';
 import { CounterReveal } from '../components/CounterReveal';
 import { 
   ArrowRight, 
@@ -35,18 +36,20 @@ export const HomeSection: React.FC<HomeSectionProps> = ({ onScrollTo }) => {
         
         {/* Background Visual Carrier with Scrim and Subtle Parallax Scale */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-          <img
+          <SafeImage
             src={IMAGES.hero}
+            fallbacks={IMAGES.fallbacks.hero}
             alt="Xtreme Fitness DHA Phase 8 athletic interior"
-            referrerPolicy="no-referrer"
+            loading="eager"
             style={{
               transform: `scale(${heroImageScale})`,
               filter: `brightness(${heroImageBrightness})`,
             }}
-            className="w-full h-full object-cover object-center opacity-25 transition-transform duration-700 ease-out"
+            className="w-full h-full object-cover object-center transition-transform duration-700 ease-out"
+            containerClassName="w-full h-full opacity-40 sm:opacity-50"
           />
-          {/* Subtle gradient scrim ensuring AAA contrast */}
-          <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent" />
+          {/* Subtle gradient scrim ensuring AAA contrast for typography */}
+          <div className="absolute inset-0 bg-gradient-to-t from-white via-white/75 to-transparent pointer-events-none" />
         </div>
 
         {/* Top Kicker & Live Status */}

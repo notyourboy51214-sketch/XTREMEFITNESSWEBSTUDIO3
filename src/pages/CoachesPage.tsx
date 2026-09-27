@@ -1,5 +1,6 @@
 import React from 'react';
 import { COACHES, GYM_INFO, IMAGES } from '../data/gymData';
+import { SafeImage } from '../components/SafeImage';
 import { CounterReveal } from '../components/CounterReveal';
 import { CheckCircle2, MessageSquare } from 'lucide-react';
 
@@ -35,14 +36,14 @@ export const CoachesSection: React.FC<CoachesSectionProps> = ({ onScrollTo, onSe
       {/* 2. Form Spotting Visual Spotlight */}
       <div className="relative rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-sm">
         <div className="grid grid-cols-1 lg:grid-cols-12">
-          <div className="lg:col-span-6 relative min-h-[300px] lg:min-h-[420px]">
-            <img
+          <div className="lg:col-span-6 relative min-h-[320px] lg:min-h-[420px] bg-slate-900 overflow-hidden">
+            <SafeImage
               src={IMAGES.coaching}
+              fallbacks={IMAGES.fallbacks.coaching}
               alt="Hands-on coaching and barbell spotting"
-              referrerPolicy="no-referrer"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/20 hidden lg:block" />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/20 hidden lg:block pointer-events-none" />
           </div>
           <div className="lg:col-span-6 p-8 sm:p-12 flex flex-col justify-center space-y-4">
             <span className="text-xs font-mono uppercase tracking-widest text-[#064E3B] font-semibold">
