@@ -1,4 +1,9 @@
 import { Coach, Program, MemberStory, OccupancyHour, FAQItem } from '../types';
+import heroImg from '../assets/images/xtreme_facility_hero_1790495728634.jpg';
+import coachingImg from '../assets/images/form_coaching_spotting_1790495740486.jpg';
+import crossfitImg from '../assets/images/crossfit_athletic_training_1790495754112.jpg';
+import bootcampImg from '../assets/images/ramadan_bootcamp_session_1790495766915.jpg';
+import lateNightImg from '../assets/images/latenight_serene_gym_1790495779268.jpg';
 
 export const GYM_INFO = {
   name: 'Xtreme Fitness',
@@ -14,11 +19,11 @@ export const GYM_INFO = {
 };
 
 export const IMAGES = {
-  hero: '/src/assets/images/xtreme_facility_hero_1790495728634.jpg',
-  coaching: '/src/assets/images/form_coaching_spotting_1790495740486.jpg',
-  crossfit: '/src/assets/images/crossfit_athletic_training_1790495754112.jpg',
-  bootcamp: '/src/assets/images/ramadan_bootcamp_session_1790495766915.jpg',
-  lateNight: '/src/assets/images/latenight_serene_gym_1790495779268.jpg',
+  hero: heroImg,
+  coaching: coachingImg,
+  crossfit: crossfitImg,
+  bootcamp: bootcampImg,
+  lateNight: lateNightImg,
 };
 
 export const COACHES: Coach[] = [
